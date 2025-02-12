@@ -64,6 +64,12 @@
     transition: width 0.5s;
   }
 
+  /* Hides the first milestone */
+  .milestone.hidden {
+    visibility: hidden;
+    /* Ensures the 0 milestone is not visible */
+  }
+
   /* Container for milestones */
   #milestone-container {
     position: absolute;
