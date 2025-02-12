@@ -1,0 +1,100 @@
+  /* Basic styles */
+  @font-face {
+    font-family: 'MyFont';
+    src: url('./dinroundpro-medi/DINRoundPro-Medium.otf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'MyMeaningFont';
+    /* Font for the meanings */
+    src: url('./elice-dx-neolli/EliceDXNeolli-Medium.ttf') format('truetype');
+  }
+
+  body {
+    font-family: 'MyFont', Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+  }
+
+  /* Apply the specific font for the meanings in list2 */
+  #list2 {
+    font-family: 'MyMeaningFont', Arial, sans-serif;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+  .words-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .word-item {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid rgb(229, 229, 229);
+    border-radius: 7px;
+    transition: background-color 0.3s;
+  }
+
+  .word-item:hover {
+    background-color: #f0f0f0;
+  }
+
+  /* Container for the progress bar */
+  #progress-container {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+
+  /* The green progress bar */
+  #progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: rgb(88, 204, 2);
+    border-radius: 10px;
+    transition: width 0.5s;
+  }
+
+  /* Container for milestones */
+  #milestone-container {
+    position: absolute;
+    top: -7px;
+    /* Adjust the position above the bar */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    /* Disable user interaction */
+  }
+
+  /* Milestone bubbles */
+  .milestone {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ddd;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #aaa;
+    transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  }
+
+  /* Milestone active state (filled with progress color) */
+  .milestone.active {
+    background-color: rgb(88, 204, 2);
+    color: white;
+    border-color: rgb(88, 204, 2);
+  }
