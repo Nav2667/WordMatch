@@ -67,7 +67,7 @@
   /* Container for milestones */
   #milestone-container {
     position: absolute;
-    top: -7px;
+    top: -6.5px;
     /* Adjust the position above the bar */
     width: 100%;
     display: flex;
