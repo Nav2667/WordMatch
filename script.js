@@ -3,7 +3,9 @@ const words = [
   { word: 'Hello', translation: '안녕하세요' },
   { word: 'Goodbye', translation: '안녕히 가세요' },
   { word: 'Please', translation: '제발요' },
-  { word: 'Thank you', translation: '감사합니다' }
+  { word: 'Thank you', translation: '감사합니다' },
+  { word: 'Movement', translation: '움직임' },
+  { word: 'Body', translation: '신체' }
 ];
 
 // Shuffle function to randomize the arrays
