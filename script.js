@@ -150,7 +150,7 @@ function markMatch(leftTile, rightTile, status) {
 }
 
 let totalMatches = 0; // Total correct matches
-const milestones = [6, 12, 18]; // Milestone thresholds
+const milestones = [0, 6, 12, 18]; // Milestone thresholds
 
 function updateProgressBar() {
   const progressBar = document.getElementById('progress-bar');
@@ -163,9 +163,10 @@ function updateProgressBar() {
   // Update milestone bubbles
   milestones.forEach((milestone, index) => {
     const milestoneElement = milestoneElements[index];
-    if (totalMatches >= milestone) {
+    if (milestone > 0 && totalMatches >= milestone) {
+      // Skip the hidden milestone at 0
       milestoneElement.classList.add('active');
-    } else {
+    } else if (milestone > 0) {
       milestoneElement.classList.remove('active');
     }
   });
@@ -178,15 +179,6 @@ function onWordMatched() {
     updateProgressBar();
   }
 }
-
-// Simulate correct matches for demonstration
-// Call onWordMatched() every time a word is correctly matched
-// setInterval(() => {
-//   if (totalMatches < 18) {
-//     onWordMatched();
-//   }
-// }, 1000); // Simulates matches happening every second
-
 
 // Initialize the game
 populateLists();
